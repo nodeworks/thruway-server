@@ -7,10 +7,31 @@
  * Thruway Server for WebSockets and WAMP.
  */
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+if (file_exists(__DIR__ . '/../autoload.local.php')) {
+    include_once __DIR__ . '/../autoload.local.php';
+} else {
+    $autoloaders = [
+      __DIR__ . '/../../../autoload.php',
+      __DIR__ . '/../vendor/autoload.php'
+    ];
+}
 
-if (file_exists(dirname(__DIR__) . '/load.environment.php')) {
-    require dirname(__DIR__) . '/load.environment.php';
+foreach ($autoloaders as $file) {
+    if (file_exists($file)) {
+        $autoloader = $file;
+        break;
+    }
+}
+
+if (isset($autoloader)) {
+    $autoload = include_once $autoloader;
+} else {
+    echo ' You must set up the project dependencies using `composer install`' . PHP_EOL;
+    exit(1);
+}
+
+if (file_exists(__DIR__ . '/../../../load.environment.php')) {
+    require __DIR__ . '/../../../load.environment.php';
 }
 
 use React\EventLoop\Factory;

@@ -7,7 +7,7 @@
             "email": "rob@nodeworks.com"
         }
     ],
-    "bin": ["bin/server"],
+    "bin": ["bin/thruway-server"],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
