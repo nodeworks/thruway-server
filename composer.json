@@ -1,0 +1,16 @@
+{
+    "name": "nodeworks/thruway-server",
+    "description": "Thruway Server for WebSockets and WAMP.",
+    "authors": [
+        {
+            "name": "Rob Lee",
+            "email": "rob@nodeworks.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "react/zmq": "0.2.*|0.3.*",
+        "voryx/thruway": "^0.5.3"
+    }
+}
