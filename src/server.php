@@ -7,10 +7,10 @@
  * Thruway Server for WebSockets and WAMP.
  */
 
-require __DIR__ . '/vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
-if (file_exists(__DIR__ . '/load.environment.php')) {
-    require __DIR__ . '/load.environment.php';
+if (file_exists(dirname(__DIR__) . '/load.environment.php')) {
+    require dirname(__DIR__) . '/load.environment.php';
 }
 
 use React\EventLoop\Factory;
