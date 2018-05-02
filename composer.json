@@ -7,7 +7,7 @@
             "email": "rob@nodeworks.com"
         }
     ],
-    "bin": ["server.php"]
+    "bin": ["bin/server"]
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
